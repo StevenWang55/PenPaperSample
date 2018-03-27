@@ -179,9 +179,6 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="ChildView.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="PenPaperSample.h" />
@@ -204,6 +201,8 @@
     <ResourceCompile Include="PenPaperSample.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\PenPaper Bluetooth LE Specification (V1.0).doc" />
+    <None Include="..\PenPaperSample.docx" />
     <None Include="res\PenPaperSample.rc2" />
   </ItemGroup>
   <ItemGroup>

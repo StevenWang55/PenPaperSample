@@ -55,7 +55,7 @@ public:
 	int infoY;
 
 	//====================================================
-	// For Scenario 1: Connect to PenPaper HID Mini Driver
+	// For Method 1: Connect to PenPaper HID Mini Driver
 	//====================================================
 	int ConnectToPenPaperDriver(DWORD * dw_error);
 	void SetFeatureNumberToGet(int i_FeatureNumber);
@@ -74,7 +74,7 @@ public:
 	UINT workingMode;
 
 	//===============================================================================
-	// For Scenario 2: Connect to PenPaper Bluetooth LE Device's Writing Mode service
+	// For Method 2: Connect to PenPaper Bluetooth LE Device's Writing Mode service
 	//===============================================================================
 	int ConnectToPenPaperDevice(DWORD * dw_error);
 	LRESULT CChildView::OnPenPaperDataReady(WPARAM wParam, LPARAM lParam);
@@ -84,7 +84,7 @@ public:
 	PBTH_LE_GATT_DESCRIPTOR pDescriptorBuffer;
 
 	//================================================
-	// Common routine and variables for both scenarios
+	// Common routine and variables for both methods
 	//================================================
 	int IsPenPaperHIDDriverExist(HANDLE *hPenPaperHID);
 	void InitPenPaperDrawingArea(void);

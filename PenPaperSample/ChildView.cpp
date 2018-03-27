@@ -25,7 +25,7 @@ CChildView::CChildView()
 	GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 
 	//---------------------------------
-	// Initial variables for scenario 1
+	// Initial variables for method 1
 	//---------------------------------
 	m_EventStart = CreateEvent(NULL, FALSE, FALSE, NULL); // auto reset, initially rese
 	m_EventKill = CreateEvent(NULL, FALSE, FALSE, NULL); // auto reset, initially rese
@@ -39,7 +39,7 @@ CChildView::CChildView()
 	hPenPaperHID = INVALID_HANDLE_VALUE;
 
 	//---------------------------------
-	// Initial variables for scenario 2
+	// Initial variables for method 2
 	//---------------------------------
 	hPenPaper = NULL;
 	eventHandle = NULL;
@@ -63,10 +63,10 @@ CChildView::CChildView()
 
 	//---------------------------------------------------------------------------------------
 	// Check and get the Interface Handle of the PenPaper HID minidriver if it exist.
-	// If the PenPaper HID minidriver exist, then we can only use the scenario 1 to get the
+	// If the PenPaper HID minidriver exist, then we can only use the method 1 to get the
 	// data from PenPaper through the driver.
 	// If the PenPaper HID minidriver NOT exist, then we must connect to the PenPaper through
-	// the Bluetooth GATT functions. That's the way of the cenario 2.
+	// the Bluetooth GATT functions. That's the way of the method 2.
 	//---------------------------------------------------------------------------------------
 	if (RET_OK == IsPenPaperHIDDriverExist(&hPenPaperHID)) b_PenPaperHIDDriverExist = true;
 	else b_PenPaperHIDDriverExist = false;
@@ -285,7 +285,7 @@ int CChildView::IsPenPaperHIDDriverExist(HANDLE *hPenPaperHID)
 }
 
 //============================================================================
-// Scenario 1: Connect to PenPaper HID Mini Driver
+// Method 1: Connect to PenPaper HID Mini Driver
 //============================================================================
 void CChildView::OnBnClickedConnectToDriver(void)
 {
@@ -528,7 +528,7 @@ UINT ReadReportThreadProc(LPVOID pParam)
 
 
 //=====================================================================================================================
-// Scenario 2: Connect to PenPaper Bluetooth LE Device's Writing Mode service
+// Method 2: Connect to PenPaper Bluetooth LE Device's Writing Mode service
 //=====================================================================================================================
 //------------------------------------------------------------------
 // The GUIDs of the PenPaper Report-In Service and Characteristics. 
@@ -1090,7 +1090,7 @@ VOID CALLBACK s_ValueChangeEvent(BTH_LE_GATT_EVENT_TYPE EventType, PVOID EventOu
 
 
 //================================================
-// Common routine and variables for both scenarios
+// Common routine and variables for both method
 //================================================
 void CChildView::InitPenPaperDrawingArea()
 {

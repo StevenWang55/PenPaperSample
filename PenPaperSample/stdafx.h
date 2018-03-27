@@ -82,7 +82,7 @@ using namespace Gdiplus;
 
 #include <pshpack1.h>
 //====================================================
-// For Scenario 1: Connect to PenPaper HID Mini Driver
+// For Method 1: Connect to PenPaper HID Mini Driver
 //====================================================
 /*---------------------------------*/
 /* Control Data for App to Driver. */
@@ -213,7 +213,7 @@ typedef struct _ReadReportThreadInfo
 UINT ReadReportThreadProc(LPVOID pParam);
 
 //===============================================================================
-// For Scenario 2: Connect to PenPaper Bluetooth LE Device's Writing Mode service
+// For Method 2: Connect to PenPaper Bluetooth LE Device's Writing Mode service
 //===============================================================================
 #define WM_PENPAPER_DATA_READY (WM_USER + 2)
 
